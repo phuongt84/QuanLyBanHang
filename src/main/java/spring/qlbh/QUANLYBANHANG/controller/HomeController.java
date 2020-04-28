@@ -252,6 +252,13 @@ public class HomeController {
 				session.removeAttribute("cart");
 				return page;
 			}
+			//logout
+			@RequestMapping("/logout")
+			public String logout(HttpSession session) {
+				session.removeAttribute("checkUser");
+				session.removeAttribute("cart");
+				return "redirect:/";
+			}
 			//load trang sua thông tin nguoi dung
 			@RequestMapping("/suathongtin")
 			public String suaHang( Model model, HttpServletRequest request,
