@@ -6,18 +6,19 @@ public class KhuyenMaiInfo {
 	private String ngayBD;
 	private String ngayKT;
 	private int phanTram;
+	private int trangThaiKM;
 	public KhuyenMaiInfo() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public KhuyenMaiInfo(int maKM, String tenKM,String ngayBD,String ngayKT, int phanTram) {
+	public KhuyenMaiInfo(int maKM, String tenKM,String ngayBD,String ngayKT, int phanTram,int trangThaiKM) {
 		super();
 		this.maKM = maKM;
 		this.tenKM = tenKM;
 		this.ngayBD= ngayBD;
 		this.ngayKT=ngayKT;
 		this.phanTram = phanTram;
-		
+		this.trangThaiKM= trangThaiKM;
 	}
 	
 	public int getMaKM() {
@@ -47,8 +48,15 @@ public class KhuyenMaiInfo {
 	public int getPhanTram() {
 		return phanTram;
 	}
+	
 	public void setPhanTram(int phanTram) {
 		this.phanTram = phanTram;
+	}
+	public int getTrangThaiKM() {
+		return trangThaiKM;
+	}
+	public void setTrangThaiKM(int trangThaiKM) {
+		this.trangThaiKM = trangThaiKM;
 	}
 	
 }

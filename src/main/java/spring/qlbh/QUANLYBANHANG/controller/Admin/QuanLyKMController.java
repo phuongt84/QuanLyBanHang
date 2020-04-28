@@ -45,8 +45,9 @@ public class QuanLyKMController {
 		String ngayBD = themKMInfo.getNgayBD();
 		String ngayKT = themKMInfo.getNgayKT();
 		int phanTram = themKMInfo.getPhanTram();
+		int trangThaiKM= themKMInfo.getTrangThaiKM();
 		
-		KhuyenMaiInfo khuyenmai = new KhuyenMaiInfo(maKM, tenKM,ngayBD,ngayKT, phanTram);
+		KhuyenMaiInfo khuyenmai = new KhuyenMaiInfo(maKM, tenKM,ngayBD,ngayKT, phanTram,trangThaiKM);
 		khuyenMaiDao.themKM(khuyenmai);
 		return "redirect:/admin/khuyenmai/show";
 	}
@@ -64,7 +65,8 @@ public class QuanLyKMController {
 		String ngayBD = suaKMInfo.getNgayBD();
 		String ngayKT = suaKMInfo.getNgayKT();
 		int phanTram = suaKMInfo.getPhanTram();
-		KhuyenMaiInfo suaKM = new KhuyenMaiInfo(maKM, tenKM, ngayBD, ngayKT, phanTram);		
+		int trangThaiKM = suaKMInfo.getTrangThaiKM();
+		KhuyenMaiInfo suaKM = new KhuyenMaiInfo(maKM, tenKM, ngayBD, ngayKT, phanTram,trangThaiKM);		
 		khuyenMaiDao.suaKhuyenMai(suaKM);
 		
 		return "redirect:/admin/khuyenmai/show";

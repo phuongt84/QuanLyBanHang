@@ -57,6 +57,15 @@
 										 id="phanTram" />
 									
 								</div>
+								<div class="form-group">
+									<label>Trạng thái</label>  
+									<form:select path="trangThaiKM" class="form-control custom-select">
+										<option>1</option>
+										<option>0</option>
+									</form:select>
+
+
+								</div>
 							</div>
 						 
 						</div>

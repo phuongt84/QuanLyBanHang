@@ -30,7 +30,8 @@
 					<th>Ngày bắt đầu</th>
 					<th>Ngày kết thúc</th>
 					<th>Phần trăm giảm giá(%)</th>
-					<th></th>
+					<th>Trạng thái</th>
+					
 				</tr>
 			</thead>
 			
@@ -42,6 +43,7 @@
 						<td>${k.ngayBD}</td>
 						<td>${k.ngayBD}</td>
 						<td>${k.phanTram}</td>
+						<td>${k.trangThaiKM}</td>
 						<td><a href="${pageContext.request.contextPath}/admin/khuyenmai/sua/${k.maKM }">
 								<button data-toggle="tooltip"
 									style="border: 2px solid lightgrey; border-radius: 5px;"

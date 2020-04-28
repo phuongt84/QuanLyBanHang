@@ -13,6 +13,7 @@ public class KhuyenMai {
 	private String ngayBD;
 	private String ngayKT;
 	private int phanTram;
+	private int trangThaiKM;
 	@Id
 	@Column(name="MaKM")
 	public int getMaKM() {
@@ -48,6 +49,13 @@ public class KhuyenMai {
 	}
 	public void setPhanTram(int phanTram) {
 		this.phanTram = phanTram;
+	}
+	@Column(name="TrangThaiKM")
+	public int getTrangThaiKM() {
+		return trangThaiKM;
+	}
+	public void setTrangThaiKM(int trangThaiKM) {
+		this.trangThaiKM = trangThaiKM;;
 	}
 	
 	

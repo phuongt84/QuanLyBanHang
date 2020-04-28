@@ -23,7 +23,7 @@ public class KhuyenMaiDAOImpl implements KhuyenMaiDAO {
 	public List<KhuyenMaiInfo> loadKM() {
 		Session session = sessionfactory.getCurrentSession();
 		String sql = " select new  " + KhuyenMaiInfo.class.getName()
-					+" ( km.maKM, km.tenKM,km.ngayBD, km.ngayKT,km.phanTram) " 
+					+" ( km.maKM, km.tenKM,km.ngayBD, km.ngayKT,km.phanTram, km.trangThaiKM) " 
 					+" from " + KhuyenMai.class.getName() + " km "; 
 		Query query = session.createQuery(sql);
 		
@@ -39,7 +39,7 @@ public class KhuyenMaiDAOImpl implements KhuyenMaiDAO {
 		kmEntity.setNgayBD(khuyenmai.getNgayBD());
 		kmEntity.setNgayKT(khuyenmai.getNgayKT());
 		kmEntity.setPhanTram(khuyenmai.getPhanTram());
-		
+		kmEntity.setTrangThaiKM(khuyenmai.getTrangThaiKM());
 		session.persist(kmEntity);
 		
 	}
@@ -62,7 +62,7 @@ public class KhuyenMaiDAOImpl implements KhuyenMaiDAO {
 	public KhuyenMaiInfo loadKMID(int maKM) {
 		Session session = sessionfactory.getCurrentSession();
 		String sql = " select new  " + KhuyenMaiInfo.class.getName()
-					+" ( km.maKM, km.tenKM,km.ngayBD,km.ngayKT, km.phanTram) " // cÃ¡c trÆ°á»�ng trong Ä‘á»‘i tÆ°á»£ng LoaiHangInfo
+					+" ( km.maKM, km.tenKM,km.ngayBD,km.ngayKT, km.phanTram,km.trangThaiKM) " // cÃ¡c trÆ°á»�ng trong Ä‘á»‘i tÆ°á»£ng LoaiHangInfo
 					+" from " + KhuyenMai.class.getName() + " km "+ " where km.maKM=: maKM  ";
 		// select bÃ ng Hibernate thÃ¬ nÃ³ tráº£ vá»� 1 Ä‘á»‘i tÆ°á»£ng
 		
@@ -79,7 +79,7 @@ public class KhuyenMaiDAOImpl implements KhuyenMaiDAO {
 		kmIntity.setTenKM(suaKM.getTenKM());
 		kmIntity.setNgayBD(suaKM.getNgayBD());
 		kmIntity.setNgayKT(suaKM.getNgayKT());
-		
+		kmIntity.setTrangThaiKM(suaKM.getTrangThaiKM());
 		session.update(kmIntity);
 		
 	}
