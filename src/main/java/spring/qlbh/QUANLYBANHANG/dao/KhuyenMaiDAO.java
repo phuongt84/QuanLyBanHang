@@ -17,5 +17,7 @@ public interface KhuyenMaiDAO {
 	KhuyenMai findKM(int maKM);
 
 	public KhuyenMaiInfo loadKMID(int maKM);
+
+	public void suaKhuyenMai(KhuyenMaiInfo suaKM);
 	
 }

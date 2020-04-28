@@ -67,25 +67,18 @@
 		</div>
 			<script type="text/javascript">
 			function myFunction() {
-			var tenHang= document.getElementById("tenHang").value;
-			var image= document.getElementById("file-2").value;
-			var ngayNhapHang= document.getElementById("ngayNhapHang").value;
-			var noiSX= document.getElementById("noiSX").value;
-			var donVi= document.getElementById("donVi").value;			
-			 submitOK = "true";			 
-			if(tenHang=="" || ngayNhapHang=="" || noiSX=="" || donVi=="" ){
-				 alert("Vui lòng điền đủ thông tin");
-				    submitOK = "false";
-			}
+				var tenLoai= document.getElementById("tenLoai").value;		
+				 submitOK = "true";			 
+				if(tenLoai==""){
+					 alert("Vui lòng nhập tên loại hàng!");
+					    submitOK = "false";
+				}
+				
+				 if (submitOK == "false") {
+					    return false;
+					  }
+				}
 			
-			if(image==""){
-				 alert("Bạn chưa chọn ảnh. Hãy chọn một ảnh ở bên dưới");
-				    submitOK = "false";
-			}
-			 if (submitOK == "false") {
-				    return false;
-				  }
-			}
 		</script>
 	</section>
 </div>

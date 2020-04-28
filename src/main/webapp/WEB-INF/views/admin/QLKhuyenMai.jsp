@@ -9,7 +9,7 @@
 			<div >
 				<div class="row mb-2">
 					<div class="col-sm-6">
-						<h3 cs>QUẢN LÝ Marketing</h3>
+						<h3 cs>QUẢN LÝ MARKETING</h3>
 					</div>
 					<div class="col-sm-6" style="text-align: right; font-size: 20px;">
 						<!-- <a href="#" style="font-size: 20px;margin-top: 20px"class="glyphicon glyphicon-plus">Thêm</a>  -->
@@ -33,7 +33,7 @@
 					<th></th>
 				</tr>
 			</thead>
-			<p></p>
+			
 			<tbody>
 				<c:forEach items="${khuyenMai}" var="k"> 
 					<tr>
@@ -42,21 +42,21 @@
 						<td>${k.ngayBD}</td>
 						<td>${k.ngayBD}</td>
 						<td>${k.phanTram}</td>
-						<td><a href="">
+						<td><a href="${pageContext.request.contextPath}/admin/khuyenmai/sua/${k.maKM }">
 								<button data-toggle="tooltip"
 									style="border: 2px solid lightgrey; border-radius: 5px;"
 									data-original-title="Sửa">
 									<i class="fa fa-edit" aria-hidden="true"></i>
 								</button>
 						</a>
-						<a href="${pageContext.request.contextPath}/admin/khuyenmai/xoa?maKM=${k.maKM}" onclick="
+						<%-- <a href="${pageContext.request.contextPath}/admin/khuyenmai/xoa?maKM=${k.maKM}" onclick="
 							return confirm('Bạn có chắc chắn muốn xóa loại hàng này không? ')">
 						<button data-toggle="tooltip"
 								style="border: 2px solid lightgrey; border-radius: 5px;"
 								data-original-title="Xóa">
 								<i class="fa fa-trash" aria-hidden="true"></i>
 							</button>
-						</a>
+						</a> --%>
 							</td>
 					</tr>
 				</c:forEach>

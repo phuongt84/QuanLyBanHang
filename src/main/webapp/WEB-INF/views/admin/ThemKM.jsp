@@ -40,14 +40,14 @@
 									<label>Ngày bắt đầu</label>
 
 									<form:input path="ngayBD" type="date" class="form-control"
-										 id="tenKM" />
+										 id="ngayBD" />
 									
 								</div>
 								<div class="form-group">
 									<label>Ngày kết thúc</label>
 
 									<form:input path="ngayKT" type="date" class="form-control"
-										 id="tenKM" />
+										 id="ngayKT" />
 									
 								</div>
 								<div class="form-group">
@@ -76,26 +76,23 @@
 			</div>
 		</div>
 			<script type="text/javascript">
-			function myFunction() {
-			var tenHang= document.getElementById("tenHang").value;
-			var image= document.getElementById("file-2").value;
-			var ngayNhapHang= document.getElementById("ngayNhapHang").value;
-			var noiSX= document.getElementById("noiSX").value;
-			var donVi= document.getElementById("donVi").value;			
-			 submitOK = "true";			 
-			if(tenHang=="" || ngayNhapHang=="" || noiSX=="" || donVi=="" ){
-				 alert("Vui lòng điền đủ thông tin");
-				    submitOK = "false";
-			}
 			
-			if(image==""){
-				 alert("Bạn chưa chọn ảnh. Hãy chọn một ảnh ở bên dưới");
-				    submitOK = "false";
-			}
-			 if (submitOK == "false") {
-				    return false;
-				  }
-			}
+				function myFunction() {
+					var tenKM= document.getElementById("tenKM").value;
+					var ngayBD= document.getElementById("ngayBD").value;
+					var ngayKT= document.getElementById("ngayKT").value;
+					var phanTram= document.getElementById("phanTram").value;			
+					 submitOK = "true";			 
+					if(tenKM=="" || ngayBD=="" || ngayKT=="" || phanTram=="" ){
+						 alert("Vui lòng điền đủ thông tin!");
+						    submitOK = "false";
+					}
+					
+					 if (submitOK == "false") {
+						    return false;
+						  }
+					}
+			
 		</script>
 	</section>
 </div>

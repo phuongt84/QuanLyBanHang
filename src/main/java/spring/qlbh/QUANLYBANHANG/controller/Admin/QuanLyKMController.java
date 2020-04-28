@@ -53,10 +53,21 @@ public class QuanLyKMController {
 	@RequestMapping("/sua/{maKM}")
 	public String suaHang(@PathVariable("maKM") int maKM, Model model, HttpServletRequest request,
 			@ModelAttribute("suaKMInfo") KhuyenMaiInfo suaKMInfo) {
-		
 		KhuyenMaiInfo kmID = khuyenMaiDao.loadKMID(maKM);
 		model.addAttribute("kmID", kmID);
 		return "admin/SuaKM";
+	}
+	@RequestMapping("/sua/hoanthanh/{maKM}")
+	public String hoanThanh(@PathVariable("maKM") int maKM, Model model, HttpServletRequest request,
+			@ModelAttribute("suaKMInfo") KhuyenMaiInfo suaKMInfo) {
+		String tenKM = suaKMInfo.getTenKM();
+		String ngayBD = suaKMInfo.getNgayBD();
+		String ngayKT = suaKMInfo.getNgayKT();
+		int phanTram = suaKMInfo.getPhanTram();
+		KhuyenMaiInfo suaKM = new KhuyenMaiInfo(maKM, tenKM, ngayBD, ngayKT, phanTram);		
+		khuyenMaiDao.suaKhuyenMai(suaKM);
+		
+		return "redirect:/admin/khuyenmai/show";
 	}
 	@RequestMapping(value="/xoa")
 	public String xoaKM(Model model, HttpServletRequest request, HttpSession session) {

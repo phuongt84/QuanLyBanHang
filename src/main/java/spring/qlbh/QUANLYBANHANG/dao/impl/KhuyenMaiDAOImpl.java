@@ -71,6 +71,18 @@ public class KhuyenMaiDAOImpl implements KhuyenMaiDAO {
 		return (KhuyenMaiInfo) query.uniqueResult();
 		
 	}
+	@Override
+	public void suaKhuyenMai(KhuyenMaiInfo suaKM) {
+		Session session = sessionfactory.getCurrentSession();
+		KhuyenMai kmIntity= new KhuyenMai();
+		kmIntity.setMaKM(suaKM.getMaKM());
+		kmIntity.setTenKM(suaKM.getTenKM());
+		kmIntity.setNgayBD(suaKM.getNgayBD());
+		kmIntity.setNgayKT(suaKM.getNgayKT());
+		
+		session.update(kmIntity);
+		
+	}
 	
 	
 
