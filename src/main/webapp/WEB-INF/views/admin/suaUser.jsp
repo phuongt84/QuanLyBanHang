@@ -15,7 +15,7 @@
 <div class="container margin_60" style="width: 608px;">
 	<section class="content-header">
 		<div>
-			<h1>THÊM NGƯỜI DÙNG</h1>
+			<h1>SỬA THÔNG TIN NGƯỜI DÙNG</h1>
 		</div>
 	</section>
 	<section class="content">
@@ -25,7 +25,7 @@
 
 					<!-- MyUploadForm -->
 					<form:form modelAttribute="nguoiDungInfo" method="POST"
-		action="${pageContext.request.contextPath}/admin/nguoidung/adduser/themnguoidung"
+		action="${pageContext.request.contextPath}/admin/nguoidung/suauser/hoanthanh/${nguoidung.maND }"
 		enctype="multipart/form-data" onsubmit="return myFunction()">
 		<div class="section">
 						<div class="row">
@@ -33,7 +33,7 @@
 								<div class="form-group">
 									<label>Tên Đăng Nhập</label>
 									<form:input class="form-control" type="text" path="tenDN" id="tenDN"
-									placeholder="Tên Đăng Nhập" />
+									value="${nguoidung.tenDN }" placeholder="Tên Đăng Nhập" />
 								</div>
 							</div>
 
@@ -58,7 +58,7 @@
 									<label>Họ Tên</label>
 
 									<form:input path="hoTen" class="form-control"
-										placeholder="Nhập họ tên" id="hoTen" />
+									value="${nguoidung.hoTen }"	placeholder="Nhập họ tên" id="hoTen" />
 
 								</div>
 							</div>
@@ -70,7 +70,7 @@
 									<label>Địa Chỉ</label>
 
 									<form:input path="diaChi" class="form-control"
-										placeholder="Nhập địa chỉ" id="diaChi" />
+									value="${nguoidung.diaChi }"	placeholder="Địa chỉ" id="diaChi" />
 
 								</div>
 							</div>
@@ -82,7 +82,7 @@
 									<label>SĐT</label>
 
 									<form:input path="sDT" class="form-control"
-										placeholder="Nhập số điện thoại" id="sDT" />
+										value="${nguoidung.sDT }"	placeholder="Số điện thoại" id="sDT" />
 
 								</div>
 							</div>
@@ -93,8 +93,8 @@
 								<div class="form-group">
 									<label>Email</label>
 
-									<form:input path="email" class="form-control" placeholder="Nhập email"
-										id="email" />
+									<form:input path="email" class="form-control" placeholder="Loại"
+										value="${nguoidung.email }"	id="email" />
 
 								</div>
 							</div>
@@ -118,7 +118,7 @@
 									<div class="form-group">
 										<form:input type="file" path="anhuser" id="file-2"
 									style="width: 0.1px;height: 0.1px;opacity: 0;overflow: hidden;position: absolute;z-index: -1;"></form:input>
-								<label for="file-2"><span>Thêm Ảnh Đại Diện</span> <svg
+								<label for="file-2"><span>Đổi Ảnh Đại Diện</span> <svg
 										xmlns="http://www.w3.org/2000/svg" width="20" height="17"
 										viewBox="0 0 20 17">
 						          <path
@@ -129,7 +129,7 @@
 							</div>
 							<div class="row" style="margin-top: 10px">
 								<div class="col-sm-6">
-									<button type="submit" id="" class="btn btn-primary">Thêm</button>
+									<button type="submit" id="" class="btn btn-primary">Sửa</button>
 
 									<a href="${pageContext.request.contextPath}/admin/user"
 										class="btn btn-info "> <span></span> Cancel
@@ -164,7 +164,7 @@
 					</form:form>
 <c:if test="${thongbao != null }">
 		<script type="text/javascript">									
-			alert("Tên đăng nhập đã tồn tại");																
+			alert("Tên đăng đã tồn tại");																
 		</script>	
 	</c:if>
 				</div>
