@@ -252,6 +252,34 @@ public class HomeController {
 				session.removeAttribute("cart");
 				return page;
 			}
+			//load trang sua thông tin nguoi dung
+			@RequestMapping("/suathongtin")
+			public String suaHang( Model model, HttpServletRequest request,
+					HttpSession session) {
+				NguoiDungInfo nguoiDungInfo=new NguoiDungInfo();
+				model.addAttribute("nguoiDungInfo", nguoiDungInfo);
+				return "SuaThongTin";
+			}
+			//xy ly sua thong tin nguoi dung
+			@RequestMapping("/suathongtin/suathanhcong")
+			public String SuaTT(Model model, HttpServletRequest request, @ModelAttribute("nguoiDungInfo") NguoiDungInfo nguoiDungInfo,
+					HttpSession session) {
+				NguoiDungInfo nD = (NguoiDungInfo) session.getAttribute("checkUser");
+				String tenDN = nguoiDungInfo.getTenDN();
+				String matKhau= nguoiDungInfo.getMatKhau();
+				String hoTen = nguoiDungInfo.getHoTen();
+				int sDT =nguoiDungInfo.getsDT();	
+				String diaChi= nguoiDungInfo.getDiaChi();
+				String Email = nguoiDungInfo.getEmail();
+				String loai = "1";
+				CommonsMultipartFile fileDatas = nguoiDungInfo.getAnhuser();
+				String imageLink = fileDatas.getOriginalFilename();		
+				NguoiDungInfo nd = new NguoiDungInfo(nD.getMaND(), tenDN, matKhau,hoTen, imageLink, diaChi, sDT,
+						Email, loai);
+				nguoiDungDAO.updateNguoiDung(nd);
+				doUpload(request, nguoiDungInfo);			
+				return "redirect:/";
+			}
 		@RequestMapping("/dangky")
 		public String DangKyPage(Model model,HttpServletRequest request, HttpSession session) {
 			NguoiDungInfo nguoiDungInfo=new NguoiDungInfo();
