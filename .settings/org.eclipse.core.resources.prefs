@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/main/java/spring/qlbh/QUANLYBANHANG/controller/Admin/QuanLyHangController.java=UTF-8
+encoding//src/main/java/spring/qlbh/QUANLYBANHANG/controller/Admin/QuanLyNguoiDungController.java=UTF-8
 encoding//src/main/java/spring/qlbh/QUANLYBANHANG/controller/HomeController.java=UTF-8
 encoding//src/main/java/spring/qlbh/QUANLYBANHANG/dao/impl/KhuyenMaiDAOImpl.java=UTF-8
 encoding//src/main/java/spring/qlbh/QUANLYBANHANG/dao/impl/LoaiHangDAOImpl.java=UTF-8

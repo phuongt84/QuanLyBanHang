@@ -107,25 +107,25 @@
 									Quản Lý Hàng <i class="fas fa-angle-left right"> </i>
 								</p>
 						</a></li>
-						<li class="nav-item has-treeview"><a href="#"
+						<li class="nav-item has-treeview"><a href="${pageContext.request.contextPath}/admin/loaihang/show"
 							class="nav-link"> <i class="nav-icon fas fa-edit"></i>
 								<p>
 									Quản Lý Loại Hàng <i class="fas fa-angle-left right"></i>
 								</p>
 						</a></li>
-						<li class="nav-item has-treeview"><a href="${pageContext.request.contextPath}/admin/user"
+						<li class="nav-item has-treeview"><a href="${pageContext.request.contextPath}/admin/nguoidung/shownND"
 							class="nav-link"> <i class="nav-icon fas fa-users"></i>
 								<p>
 									Quản Lý Người Dùng <i class="fas fa-angle-left right"></i>
 								</p>
 						</a></li>
-						<li class="nav-item has-treeview"><a href="${pageContext.request.contextPath}/admin/user"
+						<li class="nav-item has-treeview"><a href="${pageContext.request.contextPath}/admin/khuyenmai/show"
 							class="nav-link"> <i class="nav-icon far fa-clipboard"></i>
 								<p>
 									Quản Lý Maketing <i class="fas fa-angle-left right"></i>
 								</p>
 						</a></li>
-						<li class="nav-item has-treeview"><a href="${pageContext.request.contextPath}/admin/user"
+						<li class="nav-item has-treeview"><a href="${pageContext.request.contextPath}/admin/baocao"
 							class="nav-link"> <i class="nav-icon far fa-file-alt"></i>
 								<p>
 									Báo Cáo Thống Kê <i class="fas fa-angle-left right"></i>

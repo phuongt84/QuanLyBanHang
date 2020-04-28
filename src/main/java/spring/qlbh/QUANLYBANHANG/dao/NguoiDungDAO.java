@@ -17,4 +17,6 @@ public interface NguoiDungDAO {
 	public void insertNguoiDung(NguoiDungInfo userInfo);
 	public NguoiDungInfo checkTrungTenDN(String tenDN);
 	public void updateNguoiDung(NguoiDungInfo nd);
+	public void deleteNguoiDung(int maND);
+	public NguoiDungInfo loadNDTheoMa(int maND);
 }

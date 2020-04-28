@@ -2,8 +2,10 @@ package spring.qlbh.QUANLYBANHANG.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,13 +20,21 @@ public class NguoiDungDAOImpl implements NguoiDungDAO {
 	@Override
 	public List<NguoiDungInfo> loadNguoiDung() {
 		// TODO Auto-generated method stub
-		return null;
+		Session session = sessionFactory.getCurrentSession();
+		String sql = " Select new " + NguoiDungInfo.class.getName()
+				+ "(u.maND, u.tenDN, u.matKhau, u.hoTen, u.image, u.diaChi, u.sDT,u.email, u.loai)" + " from "
+				+ NguoiDung.class.getName() + " u ";
+		Query query = session.createQuery(sql);
+		return query.list();
 	}
 
 	@Override
 	public NguoiDung findNguoiDung(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		Session session = sessionFactory.getCurrentSession();
+		Criteria crit = session.createCriteria(NguoiDung.class);
+		crit.add(Restrictions.eq("id", id));
+		return (NguoiDung) crit.uniqueResult();
 	}
 
 	@Override
@@ -90,5 +100,23 @@ public class NguoiDungDAOImpl implements NguoiDungDAO {
 		nguoiDungEntity.setEmail(nd.getEmail());
 		nguoiDungEntity.setLoai(nd.getLoai());
 		session.update(nguoiDungEntity);
+	}
+	@Override
+	public void deleteNguoiDung(int maND) { 
+		NguoiDung nguoidung= this.findNguoiDung(maND);
+		if (nguoidung != null) {
+			this.sessionFactory.getCurrentSession().delete(nguoidung);
+		}
+	}
+	@Override
+	public NguoiDungInfo loadNDTheoMa(int maND){
+		Session session = sessionFactory.getCurrentSession();
+
+		String sql = " Select new " + NguoiDungInfo.class.getName()
+				+ "(u.maND, u.tenDN, u.matKhau, u.hoTen, u.image, u.diaChi, u.sDT,u.email, u.loai)" + " from "
+				+ NguoiDung.class.getName() + " u "+" where MaND =: maND ";
+		Query query = session.createQuery(sql);
+		query.setParameter("maND", maND);
+		return (NguoiDungInfo) query.uniqueResult();
 	}
 }
